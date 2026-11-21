@@ -16,14 +16,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0B0C0E',
-                            card: '#14161B',
-                            cardHover: '#1B1E26',
-                            crimson: '#7F1D1D',
-                            crimsonDark: '#450A0A',
-                            gold: '#EAB308',
-                            goldLight: '#FDE047',
-                            goldDark: '#CA8A04',
+                            dark: '#09070A',
+                            card: '#161116',
+                            cardHover: '#221820',
+                            crimson: '#881337',
+                            crimsonDark: '#4C0519',
+                            royalMaroon: '#6B0F1A',
+                            saffron: '#EA580C',
+                            gold: '#F59E0B',
+                            goldLight: '#FDE68A',
+                            goldDark: '#B45309',
                         }
                     },
                     fontFamily: {
@@ -36,27 +38,53 @@
         }
     </script>
     <style>
-        /* Custom Traditional Pattern Overlay */
+        /* Custom Traditional Royal Mandala / Jaali Pattern Overlay */
         .pattern-overlay {
-            background-image: radial-gradient(#eab308 0.75px, transparent 0.75px), radial-gradient(#eab308 0.75px, #0b0c0e 0.75px);
+            background-image:
+                radial-gradient(circle at 15px 15px, rgba(245, 158, 11, 0.22) 1.5px, transparent 1.5px),
+                radial-gradient(circle at 0 0, rgba(225, 29, 72, 0.18) 1px, transparent 1px);
             background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-            opacity: 0.08;
+            opacity: 0.45;
+        }
+
+        /* Rich Royal Ambient Backdrop */
+        .royal-dark-bg {
+            background-color: #09070A;
+            background-image:
+                radial-gradient(ellipse 85% 45% at 50% 0%, rgba(136, 19, 55, 0.34), transparent 70%),
+                radial-gradient(ellipse 70% 40% at 85% 35%, rgba(180, 83, 9, 0.14), transparent 65%),
+                radial-gradient(ellipse 70% 45% at 15% 75%, rgba(127, 29, 29, 0.18), transparent 65%);
         }
 
         /* Royal Metallic Gold Border Effects */
         .gold-border-glow {
-            box-shadow: 0 0 15px rgba(234, 179, 8, 0.2), inset 0 0 10px rgba(234, 179, 8, 0.12);
+            box-shadow:
+                0 12px 35px -10px rgba(0, 0, 0, 0.85),
+                0 0 24px rgba(245, 158, 11, 0.22),
+                inset 0 1px 0 rgba(253, 230, 138, 0.35),
+                inset 0 0 18px rgba(136, 19, 55, 0.35);
         }
         
         .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF5C0 0%, #FACC15 50%, #EAB308 100%);
+            background: linear-gradient(135deg, #FEF3C7 0%, #FBBF24 48%, #D97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
         .gold-gradient-bg {
-            background: linear-gradient(135deg, #FACC15 0%, #EAB308 50%, #CA8A04 100%);
+            background: linear-gradient(135deg, #FDE047 0%, #F59E0B 55%, #B45309 100%);
+        }
+
+        .crimson-gold-header {
+            background: linear-gradient(135deg, #3B0714 0%, #1E1118 52%, #29160C 100%);
+        }
+
+        .veg-section-header {
+            background: linear-gradient(135deg, #0A291C 0%, #16181F 55%, #23190E 100%);
+        }
+
+        .nonveg-section-header {
+            background: linear-gradient(135deg, #380A15 0%, #19141C 55%, #26160D 100%);
         }
 
         /* Hide scrollbars for slick mobile UI */
@@ -87,21 +115,21 @@
         }
     </style>
 </head>
-<body class="bg-[#0B0C0E] text-slate-100 font-sans antialiased pb-24 selection:bg-brand-gold selection:text-black">
+<body class="royal-dark-bg text-slate-100 font-sans antialiased pb-36 selection:bg-brand-gold selection:text-black">
 
     <!-- HERO HEADER SECTION -->
-    <header class="relative bg-[#0F1014] text-white overflow-hidden border-b-2 border-brand-gold/60 shadow-2xl">
+    <header class="relative bg-gradient-to-b from-[#2A0610] via-[#130C12] to-[#09070A] text-white overflow-hidden border-b-2 border-brand-gold/70 shadow-[0_10px_40px_rgba(136,19,55,0.35)]">
         <!-- Background Pattern -->
         <div class="absolute inset-0 pattern-overlay pointer-events-none"></div>
         
-        <!-- Deep Crimson & Gold Glows -->
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[350px] h-[350px] bg-gradient-to-br from-red-950 via-brand-crimson to-transparent rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[220px] h-[220px] bg-brand-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+        <!-- Deep Crimson & Saffron-Gold Glows -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[380px] h-[380px] bg-gradient-to-br from-rose-800 via-brand-crimson to-transparent rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+        <div class="absolute top-8 left-1/2 -translate-x-1/2 w-[250px] h-[250px] bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
 
-        <div class="relative max-w-4xl mx-auto px-4 pt-7 pb-8 text-center">
+        <div class="relative max-w-4xl mx-auto px-4 pt-6 pb-7 text-center">
             
             <!-- Ornamental Border Container -->
-            <div class="relative p-5 sm:p-7 rounded-2xl bg-gradient-to-b from-[#16181F]/90 to-[#0F1014]/95 border border-brand-gold/40 gold-border-glow shadow-2xl backdrop-blur-md">
+            <div class="relative p-5 sm:p-7 rounded-2xl bg-gradient-to-b from-[#251019]/95 via-[#161016]/95 to-[#0E0B10]/95 border-2 border-brand-gold/55 gold-border-glow backdrop-blur-md">
                 
                 <!-- SVG Ornamental Top Corner Left -->
                 <svg class="absolute top-2 left-2 w-7 h-7 text-brand-gold/70" viewBox="0 0 40 40" fill="currentColor">
@@ -126,11 +154,11 @@
 
                 <!-- Cloche / Dome Golden Emblem -->
                 <div class="inline-flex items-center justify-center mb-3">
-                    <div class="relative w-16 h-16 rounded-full bg-gradient-to-tr from-brand-goldDark via-brand-gold to-brand-goldLight p-[2px] shadow-lg shadow-brand-gold/20">
-                        <div class="w-full h-full rounded-full bg-[#0B0C0E] flex items-center justify-center">
+                    <div class="relative w-16 h-16 rounded-full bg-gradient-to-tr from-brand-goldDark via-brand-gold to-brand-goldLight p-[2.5px] shadow-lg shadow-amber-500/35">
+                        <div class="w-full h-full rounded-full bg-gradient-to-b from-[#2A0813] to-[#0B090C] flex items-center justify-center">
                             <!-- Golden Cloche Dome SVG -->
-                            <svg class="w-9 h-9 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zM4 14h16m-14 3h12a1 1 0 001-1v-1H5v1a1 1 0 001 1z"/>
+                            <svg class="w-9 h-9 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 4v2m0 0a8 8 0 00-8 8h16a8 8 0 00-8-8zM4 14h16m-14 3h12a1 1 0 001-1v-1H5v1a1 1 0 001 1z"/>
                             </svg>
                         </div>
                     </div>
@@ -138,7 +166,7 @@
 
                 <!-- Main Restaurant Titles -->
                 <div class="space-y-1">
-                    <h1 class="font-devanagari text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-white drop-shadow-md">
+                    <h1 class="font-devanagari text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-amber-50 drop-shadow-[0_2px_10px_rgba(245,158,11,0.35)]">
                         हॉटेल आमंत्रण
                     </h1>
                     <h2 class="font-serifDisplay text-lg sm:text-2xl font-bold tracking-[0.25em] gold-gradient-text uppercase">
@@ -156,15 +184,15 @@
                 </div>
 
                 <!-- Tagline in Marathi -->
-                <p class="font-devanagari text-base sm:text-lg font-semibold text-amber-200 tracking-wider">
+                <p class="font-devanagari text-base sm:text-lg font-bold text-amber-200 tracking-wider drop-shadow">
                     "चवीला न्यारी • स्वाद आहे भारी"
                 </p>
 
                 <!-- Quick Info & Badges Strip -->
-                <div class="mt-5 pt-4 border-t border-brand-gold/20 flex flex-wrap items-center justify-center gap-2 text-xs">
+                <div class="mt-5 pt-4 border-t border-brand-gold/30 flex flex-wrap items-center justify-center gap-2 text-xs">
                     
                     <!-- FSSAI Veg / Non-Veg Combined Pill -->
-                    <div class="inline-flex items-center space-x-2 bg-black/60 px-3 py-1 rounded-full border border-amber-900/40">
+                    <div class="inline-flex items-center space-x-2 bg-[#0D0A0E]/85 px-3 py-1.5 rounded-full border border-brand-gold/35 shadow-inner">
                         <div class="flex items-center space-x-1">
                             <span class="w-3.5 h-3.5 fssai-veg flex items-center justify-center bg-white rounded-sm">
                                 <span class="w-1.5 h-1.5 fssai-veg-dot rounded-full"></span>
@@ -173,16 +201,16 @@
                                 <span class="fssai-nonveg-dot"></span>
                             </span>
                         </div>
-                        <span class="font-bold text-slate-200">PURE VEG &amp; NON-VEG</span>
+                        <span class="font-bold text-amber-100">PURE VEG &amp; NON-VEG</span>
                     </div>
 
                     <!-- Specialty Pill -->
-                    <span class="bg-brand-crimson/50 text-red-100 px-3 py-1 rounded-full border border-red-500/30 font-medium">
+                    <span class="bg-gradient-to-r from-rose-950 to-red-900/80 text-rose-100 px-3 py-1.5 rounded-full border border-rose-500/40 font-semibold shadow">
                         Family Dining • Authentic Maharashtrian &amp; North Indian
                     </span>
 
                     <!-- Table Scan Pill -->
-                    <span class="bg-amber-500/10 text-brand-gold px-3 py-1 rounded-full border border-brand-gold/30 font-medium">
+                    <span class="bg-amber-500/15 text-amber-300 px-3 py-1.5 rounded-full border border-brand-gold/40 font-semibold">
                         Scan • Browse • Order
                     </span>
 
@@ -193,21 +221,21 @@
     </header>
 
     <!-- STICKY SEARCH & DIET FILTER CONTROL BAR -->
-    <div class="sticky top-0 z-30 bg-[#0F1115]/95 backdrop-blur-md shadow-xl border-b border-amber-900/40">
+    <div class="sticky top-0 z-30 bg-[#120D13]/95 backdrop-blur-md shadow-[0_8px_25px_rgba(0,0,0,0.75)] border-b border-brand-gold/35">
         <div class="max-w-4xl mx-auto px-4 py-3 space-y-2.5">
             
             <!-- Search Bar + Filter Options -->
             <div class="flex items-center gap-2">
                 <!-- Search Input -->
                 <div class="relative flex-1">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-amber-400/80">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                         </svg>
                     </div>
                     <input type="text" id="searchInput" 
                            placeholder="शोधा / Search dishes (e.g., Paneer, Chicken, थाळी)..." 
-                           class="w-full pl-10 pr-9 py-2 bg-[#181A20] border border-amber-900/40 rounded-xl text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all">
+                           class="w-full pl-10 pr-9 py-2 bg-[#1D151E] border border-brand-gold/35 rounded-xl text-sm text-white placeholder-amber-200/45 focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all">
                     <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-white">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -216,18 +244,18 @@
                 </div>
 
                 <!-- Diet Filter Segment Controls -->
-                <div class="flex bg-[#181A20] p-1 rounded-xl border border-amber-900/40 text-xs font-bold">
-                    <button onclick="setDietFilter('ALL')" id="filter-ALL" class="diet-btn px-3 py-1.5 rounded-lg transition-all bg-brand-gold text-gray-950 font-extrabold shadow-md">
+                <div class="flex items-center gap-1 bg-[#1D151E] p-1 rounded-xl border border-brand-gold/35 text-xs font-bold shrink-0">
+                    <button type="button" onclick="setDietFilter('ALL')" id="filter-ALL" class="diet-btn px-3 py-2 rounded-lg transition-all gold-gradient-bg text-gray-950 font-extrabold shadow-md cursor-pointer">
                         सर्व / All
                     </button>
-                    <button onclick="setDietFilter('VEG')" id="filter-VEG" class="diet-btn px-2.5 py-1.5 rounded-lg text-emerald-400 hover:bg-emerald-950/40 transition-all flex items-center gap-1">
-                        <span class="w-2.5 h-2.5 fssai-veg flex items-center justify-center bg-white rounded-sm">
+                    <button type="button" onclick="setDietFilter('VEG')" id="filter-VEG" class="diet-btn px-3 py-2 rounded-lg text-emerald-400 hover:bg-emerald-950/50 transition-all flex items-center gap-1.5 cursor-pointer">
+                        <span class="w-2.5 h-2.5 fssai-veg flex items-center justify-center bg-white rounded-sm shrink-0">
                             <span class="w-1 h-1 fssai-veg-dot rounded-full"></span>
                         </span>
                         <span>Veg</span>
                     </button>
-                    <button onclick="setDietFilter('NONVEG')" id="filter-NONVEG" class="diet-btn px-2.5 py-1.5 rounded-lg text-red-400 hover:bg-red-950/40 transition-all flex items-center gap-1">
-                        <span class="w-2.5 h-2.5 fssai-nonveg flex items-center justify-center bg-white rounded-sm">
+                    <button type="button" onclick="setDietFilter('NONVEG')" id="filter-NONVEG" class="diet-btn px-3 py-2 rounded-lg text-rose-400 hover:bg-rose-950/50 transition-all flex items-center gap-1.5 cursor-pointer">
+                        <span class="w-2.5 h-2.5 fssai-nonveg flex items-center justify-center bg-white rounded-sm shrink-0">
                             <span class="fssai-nonveg-dot"></span>
                         </span>
                         <span>Non-Veg</span>
@@ -271,12 +299,12 @@
 
     </main>
 
-    <!-- FLOATING BOTTOM ACTION BAR -->
-    <div class="fixed bottom-0 inset-x-0 z-40 bg-[#0F1115]/95 backdrop-blur-md border-t border-amber-900/40 shadow-2xl py-2.5 px-4">
+    <!-- FLOATING BOTTOM ACTION BAR (Lifted above Netlify badge on mobile) -->
+    <div class="fixed bottom-0 inset-x-0 z-40 bg-gradient-to-t from-[#09070A] via-[#130D14]/98 to-[#130D14]/95 backdrop-blur-md border-t border-brand-gold/40 shadow-[0_-10px_30px_rgba(0,0,0,0.85)] pt-2.5 pb-11 sm:pb-3 px-4">
         <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
             
             <!-- Quick Category Drawer Trigger Button -->
-            <button onclick="toggleCategoryDrawer(true)" class="flex items-center gap-2 px-4 py-2.5 bg-[#181A20] text-amber-400 border border-amber-900/40 rounded-xl font-bold text-xs sm:text-sm shadow-md hover:bg-[#222630] active:scale-95 transition-all">
+            <button onclick="toggleCategoryDrawer(true)" class="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-[#24141D] to-[#1B1319] text-amber-300 border border-brand-gold/45 rounded-xl font-bold text-xs sm:text-sm shadow-md hover:border-brand-gold active:scale-95 transition-all">
                 <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
                 </svg>
@@ -284,13 +312,13 @@
             </button>
 
             <!-- My Plate Order Summary Drawer Trigger Button -->
-            <button onclick="togglePlateDrawer(true)" id="floatingPlateBtn" class="flex-1 max-w-xs flex items-center justify-between px-4 py-2.5 gold-gradient-bg text-gray-950 font-bold rounded-xl shadow-lg hover:brightness-105 active:scale-95 transition-all">
+            <button onclick="togglePlateDrawer(true)" id="floatingPlateBtn" class="flex-1 max-w-xs flex items-center justify-between px-4 py-2.5 gold-gradient-bg text-gray-950 font-extrabold rounded-xl shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:brightness-105 active:scale-95 transition-all">
                 <div class="flex items-center gap-2">
                     <div class="relative">
                         <svg class="w-5 h-5 text-gray-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                         </svg>
-                        <span id="floatingCartBadge" class="absolute -top-2 -right-2.5 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-extrabold hidden">0</span>
+                        <span id="floatingCartBadge" class="absolute -top-2 -right-2.5 bg-rose-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-extrabold hidden">0</span>
                     </div>
                     <span class="text-xs sm:text-sm uppercase tracking-wide">माझी डिश / My Plate</span>
                 </div>
@@ -423,7 +451,8 @@
                 isVeg: false,
                 items: [
                     { id: "item-201", marathiName: "तंदूर लेग पीस (एच/एफ)", englishName: "Tandoor Leg Piece (H/F)", isVeg: false, price: { half: 120, full: 220 }, badge: "Chef Special" },
-                    { id: "item-202", marathiName: "तंदूर लेग पीस (1)", englishName: "Tandoor Leg Piece (1 Pc)", isVeg: false, price: 60 }
+                    { id: "item-202", marathiName: "तंदूर लेग पीस (1)", englishName: "Tandoor Leg Piece (1 Pc)", isVeg: false, price: 60 },
+                    { id: "item-203", marathiName: "लेग पीस (एच/एफ)", englishName: "Leg Piece (H/F)", isVeg: false, price: { half: 180, full: 350 } }
                 ]
             },
             {
@@ -438,7 +467,8 @@
                     { id: "item-304", marathiName: "पनीर चिंगारी", englishName: "Paneer Chingari", isVeg: true, price: 279, badge: "Spicy" },
                     { id: "item-305", marathiName: "पनीर भुर्जी", englishName: "Paneer Bhurji", isVeg: true, price: 279 },
                     { id: "item-306", marathiName: "पनीर कढाई", englishName: "Paneer Kadhai", isVeg: true, price: 279 },
-                    { id: "item-307", marathiName: "पनीर हंडी (एच/एफ)", englishName: "Paneer Handi (H/F)", isVeg: true, price: { half: 299, full: 549 } }
+                    { id: "item-307", marathiName: "पनीर हंडी (एच/एफ)", englishName: "Paneer Handi (H/F)", isVeg: true, price: { half: 299, full: 549 } },
+                    { id: "item-308", marathiName: "व्हेज मालवणी रस्सा (एच/एफ)", englishName: "Veg Malwani Rassa (H/F)", isVeg: true, price: { half: 80, full: 140 } }
                 ]
             },
             {
@@ -584,7 +614,8 @@
                     { id: "item-1502", marathiName: "चिकन खर्डा थाळी", englishName: "Chicken Kharda Thali", isVeg: false, price: 229 },
                     { id: "item-1503", marathiName: "चिकन धनगरी थाळी", englishName: "Chicken Dhangari Thali", isVeg: false, price: 229 },
                     { id: "item-1504", marathiName: "बटर चिकन थाळी", englishName: "Butter Chicken Thali", isVeg: false, price: 249 },
-                    { id: "item-1505", marathiName: "आमंत्रण स्पे. चिकन थाळी", englishName: "A. Spl. Chicken Thali", isVeg: false, price: 299, badge: "Chef Special" }
+                    { id: "item-1505", marathiName: "आमंत्रण स्पे. चिकन थाळी", englishName: "A. Spl. Chicken Thali", isVeg: false, price: 299, badge: "Chef Special" },
+                    { id: "item-1506", marathiName: "चिकन मालवणी थाळी", englishName: "Chicken Malwani Thali", isVeg: false, price: 280 }
                 ]
             },
             {
@@ -596,7 +627,8 @@
                     { id: "item-1601", marathiName: "मटण थाळी (मसाला/फ्राय)", englishName: "Mutton Thali (Masala/Fry)", isVeg: false, price: 299 },
                     { id: "item-1602", marathiName: "मटण खर्डा थाळी", englishName: "Mutton Kharda Thali", isVeg: false, price: 299 },
                     { id: "item-1603", marathiName: "मटण धनगरी थाळी", englishName: "Mutton Dhangari Thali", isVeg: false, price: 299 },
-                    { id: "item-1604", marathiName: "आमंत्रण स्पे. मटण थाळी", englishName: "A. Spl. Mutton Thali", isVeg: false, price: 359, badge: "Chef Special" }
+                    { id: "item-1604", marathiName: "आमंत्रण स्पे. मटण थाळी", englishName: "A. Spl. Mutton Thali", isVeg: false, price: 359, badge: "Chef Special" },
+                    { id: "item-1605", marathiName: "मटण मालवणी थाळी", englishName: "Mutton Malwani Thali", isVeg: false, price: 340 }
                 ]
             },
             {
@@ -614,6 +646,8 @@
         let currentDietFilter = "ALL";
         let currentSearchQuery = "";
         let activeCategoryId = menuSections[0].id;
+        let isManualScrolling = false;
+        let scrollUnlockTimer = null;
         let myPlate = []; // { key, id, marathiName, englishName, isVeg, variant, price, qty }
 
         // 3. INITIALIZATION
@@ -655,8 +689,8 @@
                     <button onclick="scrollToSection('${sec.id}')" id="pill-${sec.id}"
                         class="cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-devanagari font-semibold transition-all border ${
                             isActive
-                                ? "bg-brand-gold text-gray-950 border-brand-gold font-bold shadow-md"
-                                : "bg-[#181A20] text-slate-300 border-amber-900/40 hover:border-brand-gold/60 hover:text-white"
+                                ? "gold-gradient-bg text-gray-950 border-amber-300 font-extrabold shadow-[0_2px_12px_rgba(245,158,11,0.35)]"
+                                : "bg-[#1C141D] text-amber-100/80 border-brand-gold/30 hover:border-brand-gold hover:text-white"
                         }">
                         ${sec.marathiTitle.replace(/^\d+\.\s*/, "")}
                     </button>
@@ -665,12 +699,12 @@
 
             drawerList.innerHTML = menuSections.map(sec => `
                 <button onclick="scrollToSection('${sec.id}'); toggleCategoryDrawer(false);"
-                    class="flex items-center justify-between p-3 rounded-xl bg-[#181A20] hover:bg-[#222630] border border-amber-900/30 text-left transition-all">
+                    class="flex items-center justify-between p-3 rounded-xl bg-[#1D151E] hover:bg-[#2A1B26] border border-brand-gold/30 text-left transition-all">
                     <div>
-                        <div class="font-devanagari font-bold text-sm text-white">${sec.marathiTitle}</div>
-                        <div class="text-[11px] text-slate-400 uppercase tracking-wider">${sec.englishTitle}</div>
+                        <div class="font-devanagari font-bold text-sm text-amber-50">${sec.marathiTitle}</div>
+                        <div class="text-[11px] text-amber-300/75 uppercase tracking-wider">${sec.englishTitle}</div>
                     </div>
-                    <span class="px-2.5 py-1 rounded-full bg-amber-500/10 border border-brand-gold/30 text-brand-gold text-xs font-bold">
+                    <span class="px-2.5 py-1 rounded-full bg-amber-500/15 border border-brand-gold/40 text-amber-300 text-xs font-bold">
                         ${sec.items.length}
                     </span>
                 </button>
@@ -678,34 +712,58 @@
         }
 
         function scrollToSection(sectionId) {
-            const el = document.getElementById(sectionId);
+            // If current search or diet filter hides the target section, reset filters so it becomes visible
+            let el = document.getElementById(sectionId);
+            if (!el) {
+                currentDietFilter = "ALL";
+                currentSearchQuery = "";
+                const searchInput = document.getElementById("searchInput");
+                if (searchInput) searchInput.value = "";
+                const clearBtn = document.getElementById("clearSearchBtn");
+                if (clearBtn) clearBtn.classList.add("hidden");
+                setDietFilter("ALL");
+                el = document.getElementById(sectionId);
+            }
             if (!el) return;
+
             activeCategoryId = sectionId;
             updateActivePillUI(sectionId);
-            const yOffset = -125;
-            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
+
+            // Prevent ScrollSpy from overriding the active pill during smooth scroll
+            isManualScrolling = true;
+            if (scrollUnlockTimer) clearTimeout(scrollUnlockTimer);
+            scrollUnlockTimer = setTimeout(() => {
+                isManualScrolling = false;
+            }, 900);
+
+            const stickyBar = document.querySelector(".sticky");
+            const stickyHeight = stickyBar ? stickyBar.offsetHeight : 120;
+            const y = el.getBoundingClientRect().top + window.scrollY - stickyHeight - 12;
+            window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
         }
 
         function updateActivePillUI(sectionId) {
             document.querySelectorAll(".cat-pill").forEach(btn => {
-                btn.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-devanagari font-semibold transition-all border bg-[#181A20] text-slate-300 border-amber-900/40 hover:border-brand-gold/60 hover:text-white";
+                btn.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-devanagari font-semibold transition-all border bg-[#1C141D] text-amber-100/80 border-brand-gold/30 hover:border-brand-gold hover:text-white";
             });
             const activePill = document.getElementById(`pill-${sectionId}`);
             if (activePill) {
-                activePill.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-devanagari font-bold transition-all border bg-brand-gold text-gray-950 border-brand-gold shadow-md";
+                activePill.className = "cat-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-devanagari font-extrabold transition-all border gold-gradient-bg text-gray-950 border-amber-300 shadow-[0_2px_12px_rgba(245,158,11,0.35)]";
                 activePill.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
             }
         }
 
         function setupScrollSpy() {
             window.addEventListener("scroll", () => {
-                let current = menuSections[0]?.id;
+                if (isManualScrolling) return;
+                const stickyBar = document.querySelector(".sticky");
+                const triggerOffset = (stickyBar ? stickyBar.offsetHeight : 120) + 45;
+                let current = null;
                 for (const sec of menuSections) {
                     const el = document.getElementById(sec.id);
                     if (el) {
                         const rect = el.getBoundingClientRect();
-                        if (rect.top <= 165) {
+                        if (rect.top <= triggerOffset) {
                             current = sec.id;
                         }
                     }
@@ -748,31 +806,33 @@
                 totalMatchedItems += filteredItems.length;
 
                 const itemsHtml = filteredItems.map(item => renderItemCard(item)).join("");
+                const headerThemeClass = sec.isVeg ? "veg-section-header border-emerald-500/35" : "nonveg-section-header border-rose-500/35";
+                const cardBorderClass = sec.isVeg ? "border-emerald-700/35" : "border-rose-700/35";
 
                 return `
-                    <section id="${sec.id}" class="scroll-mt-32 bg-[#14161B] rounded-2xl border border-amber-900/35 shadow-xl overflow-hidden">
+                    <section id="${sec.id}" class="scroll-mt-32 bg-gradient-to-b from-[#1A131A] to-[#120E13] rounded-2xl border ${cardBorderClass} shadow-[0_10px_30px_rgba(0,0,0,0.65)] overflow-hidden">
                         <!-- Section Header -->
-                        <div class="px-4 py-3.5 bg-gradient-to-r from-[#1D2028] via-[#181A20] to-[#14161B] border-b border-brand-gold/30 flex items-center justify-between gap-2">
+                        <div class="px-4 py-3.5 ${headerThemeClass} border-b flex items-center justify-between gap-2">
                             <div class="flex items-center gap-2.5">
-                                <span class="w-4 h-4 ${itemDietClass(sec.isVeg)} flex items-center justify-center bg-white rounded-sm shrink-0">
+                                <span class="w-4 h-4 ${itemDietClass(sec.isVeg)} flex items-center justify-center bg-white rounded-sm shrink-0 shadow">
                                     <span class="${sec.isVeg ? "w-2 h-2 fssai-veg-dot rounded-full" : "fssai-nonveg-dot"}"></span>
                                 </span>
                                 <div>
-                                    <h3 class="font-devanagari text-lg sm:text-xl font-extrabold text-white leading-tight">
+                                    <h3 class="font-devanagari text-lg sm:text-xl font-extrabold text-amber-50 leading-tight">
                                         ${sec.marathiTitle}
                                     </h3>
-                                    <p class="text-[11px] sm:text-xs font-bold tracking-widest text-brand-gold uppercase">
+                                    <p class="text-[11px] sm:text-xs font-bold tracking-widest text-amber-400 uppercase">
                                         ${sec.englishTitle}
                                     </p>
                                 </div>
                             </div>
-                            <span class="shrink-0 px-2.5 py-1 rounded-full bg-black/50 border border-amber-900/40 text-[11px] font-semibold text-amber-200">
+                            <span class="shrink-0 px-2.5 py-1 rounded-full bg-black/55 border border-brand-gold/35 text-[11px] font-bold text-amber-200">
                                 ${filteredItems.length} ${filteredItems.length === 1 ? "Dish" : "Dishes"}
                             </span>
                         </div>
 
                         <!-- Section Dishes -->
-                        <div class="divide-y divide-amber-900/20">
+                        <div class="divide-y divide-amber-500/15">
                             ${itemsHtml}
                         </div>
                     </section>
@@ -801,14 +861,19 @@
 
         function renderItemCard(item) {
             const isHalfFull = typeof item.price === "object";
+            const badgeColorClass = item.badge === "Spicy"
+                ? "bg-rose-500/20 text-rose-300 border-rose-500/45"
+                : item.badge === "Chef Special" || item.badge === "Bestseller"
+                    ? "bg-amber-500/20 text-amber-300 border-amber-400/50"
+                    : "bg-emerald-500/20 text-emerald-300 border-emerald-500/40";
             const badgeHtml = item.badge
-                ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-500/15 text-amber-300 border border-amber-500/30">${item.badge}</span>`
+                ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider border ${badgeColorClass}">${item.badge}</span>`
                 : "";
 
             if (!isHalfFull) {
                 const qty = getItemQty(item.id, "Regular");
                 return `
-                    <div class="p-4 hover:bg-[#1B1E26] transition-colors flex items-center justify-between gap-3">
+                    <div class="p-4 hover:bg-[#231822]/75 transition-colors flex items-center justify-between gap-3">
                         <div class="min-w-0 flex-1">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="w-3.5 h-3.5 ${itemDietClass(item.isVeg)} flex items-center justify-center bg-white rounded-sm shrink-0">
@@ -816,16 +881,16 @@
                                 </span>
                                 ${badgeHtml}
                             </div>
-                            <h4 class="font-devanagari text-base sm:text-lg font-bold text-slate-50 mt-1 leading-snug break-words">
+                            <h4 class="font-devanagari text-base sm:text-lg font-bold text-amber-50 mt-1.5 leading-snug break-words">
                                 ${item.marathiName}
                             </h4>
-                            <p class="text-xs sm:text-sm text-slate-400 font-medium break-words">
+                            <p class="text-xs sm:text-sm text-amber-200/65 font-medium break-words">
                                 ${item.englishName}
                             </p>
                         </div>
 
                         <div class="shrink-0 flex flex-col items-end gap-2">
-                            <span class="font-mono text-base sm:text-lg font-extrabold text-amber-400">
+                            <span class="font-mono text-base sm:text-lg font-extrabold text-amber-400 drop-shadow-[0_1px_6px_rgba(245,158,11,0.3)]">
                                 ₹${item.price}
                             </span>
                             ${renderQtyControl(item.id, "Regular", item.price, qty)}
@@ -838,7 +903,7 @@
             const fullQty = getItemQty(item.id, "Full");
 
             return `
-                <div class="p-4 hover:bg-[#1B1E26] transition-colors space-y-3">
+                <div class="p-4 hover:bg-[#231822]/75 transition-colors space-y-3">
                     <div class="flex items-start justify-between gap-3">
                         <div class="min-w-0 flex-1">
                             <div class="flex items-center gap-2 flex-wrap">
@@ -847,33 +912,33 @@
                                 </span>
                                 ${badgeHtml}
                             </div>
-                            <h4 class="font-devanagari text-base sm:text-lg font-bold text-slate-50 mt-1 leading-snug break-words">
+                            <h4 class="font-devanagari text-base sm:text-lg font-bold text-amber-50 mt-1.5 leading-snug break-words">
                                 ${item.marathiName}
                             </h4>
-                            <p class="text-xs sm:text-sm text-slate-400 font-medium break-words">
+                            <p class="text-xs sm:text-sm text-amber-200/65 font-medium break-words">
                                 ${item.englishName}
                             </p>
                         </div>
                         <div class="shrink-0 text-right">
-                            <span class="font-mono text-sm sm:text-base font-extrabold text-amber-400">
+                            <span class="font-mono text-sm sm:text-base font-extrabold text-amber-400 drop-shadow-[0_1px_6px_rgba(245,158,11,0.3)]">
                                 ₹${item.price.half} / ₹${item.price.full}
                             </span>
-                            <div class="text-[10px] text-slate-400 uppercase tracking-wider">Half / Full</div>
+                            <div class="text-[10px] text-amber-200/55 uppercase tracking-wider">Half / Full</div>
                         </div>
                     </div>
 
                     <!-- Half / Full Quick Add Row -->
                     <div class="grid grid-cols-2 gap-2 pt-1">
-                        <div class="flex items-center justify-between bg-[#0F1115] border border-amber-900/35 rounded-xl px-2.5 py-1.5">
+                        <div class="flex items-center justify-between bg-[#100B10] border border-brand-gold/30 rounded-xl px-2.5 py-1.5">
                             <div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Half</div>
+                                <div class="text-[10px] uppercase tracking-wider text-amber-200/65 font-semibold">Half</div>
                                 <div class="font-mono text-xs sm:text-sm font-extrabold text-amber-400">₹${item.price.half}</div>
                             </div>
                             ${renderQtyControl(item.id, "Half", item.price.half, halfQty)}
                         </div>
-                        <div class="flex items-center justify-between bg-[#0F1115] border border-amber-900/35 rounded-xl px-2.5 py-1.5">
+                        <div class="flex items-center justify-between bg-[#100B10] border border-brand-gold/30 rounded-xl px-2.5 py-1.5">
                             <div>
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Full</div>
+                                <div class="text-[10px] uppercase tracking-wider text-amber-200/65 font-semibold">Full</div>
                                 <div class="font-mono text-xs sm:text-sm font-extrabold text-amber-400">₹${item.price.full}</div>
                             </div>
                             ${renderQtyControl(item.id, "Full", item.price.full, fullQty)}
@@ -887,16 +952,16 @@
             if (qty === 0) {
                 return `
                     <button onclick="updatePlateItem('${itemId}', '${variant}', ${price}, 1)"
-                        class="px-3 py-1 rounded-lg bg-amber-500/15 hover:bg-brand-gold text-amber-300 hover:text-gray-950 border border-brand-gold/50 text-xs font-extrabold transition-all active:scale-95">
+                        class="px-3.5 py-1 rounded-lg bg-gradient-to-r from-amber-500/25 to-orange-500/20 hover:from-amber-400 hover:to-amber-500 text-amber-200 hover:text-gray-950 border border-brand-gold/60 text-xs font-extrabold shadow-sm transition-all active:scale-95">
                         + Add
                     </button>
                 `;
             }
             return `
-                <div class="inline-flex items-center bg-brand-gold text-gray-950 rounded-lg font-extrabold text-xs shadow">
-                    <button onclick="updatePlateItem('${itemId}', '${variant}', ${price}, -1)" class="px-2 py-1 hover:bg-amber-400 rounded-l-lg">−</button>
+                <div class="inline-flex items-center gold-gradient-bg text-gray-950 rounded-lg font-extrabold text-xs shadow-md">
+                    <button onclick="updatePlateItem('${itemId}', '${variant}', ${price}, -1)" class="px-2 py-1 hover:bg-amber-300 rounded-l-lg">−</button>
                     <span class="px-2 font-mono">${qty}</span>
-                    <button onclick="updatePlateItem('${itemId}', '${variant}', ${price}, 1)" class="px-2 py-1 hover:bg-amber-400 rounded-r-lg">+</button>
+                    <button onclick="updatePlateItem('${itemId}', '${variant}', ${price}, 1)" class="px-2 py-1 hover:bg-amber-300 rounded-r-lg">+</button>
                 </div>
             `;
         }
@@ -922,18 +987,30 @@
 
         function setDietFilter(diet) {
             currentDietFilter = diet;
-            document.querySelectorAll(".diet-btn").forEach(btn => {
-                btn.classList.remove("bg-brand-gold", "text-gray-950", "font-extrabold", "shadow-md");
+
+            const baseClasses = {
+                ALL: "diet-btn px-3 py-2 rounded-lg transition-all text-amber-200/80 hover:bg-amber-950/50 cursor-pointer",
+                VEG: "diet-btn px-3 py-2 rounded-lg transition-all text-emerald-400 hover:bg-emerald-950/50 flex items-center gap-1.5 cursor-pointer",
+                NONVEG: "diet-btn px-3 py-2 rounded-lg transition-all text-rose-400 hover:bg-rose-950/50 flex items-center gap-1.5 cursor-pointer"
+            };
+
+            const activeClasses = {
+                ALL: "diet-btn px-3 py-2 rounded-lg transition-all gold-gradient-bg text-gray-950 font-extrabold shadow-md cursor-pointer",
+                VEG: "diet-btn px-3 py-2 rounded-lg transition-all bg-emerald-500 text-gray-950 font-extrabold shadow-md flex items-center gap-1.5 cursor-pointer",
+                NONVEG: "diet-btn px-3 py-2 rounded-lg transition-all bg-rose-600 text-white font-extrabold shadow-md flex items-center gap-1.5 cursor-pointer"
+            };
+
+            ["ALL", "VEG", "NONVEG"].forEach(key => {
+                const btn = document.getElementById(`filter-${key}`);
+                if (btn) {
+                    btn.className = key === diet ? activeClasses[key] : baseClasses[key];
+                }
             });
-            const activeBtn = document.getElementById(`filter-${diet}`);
-            if (activeBtn) {
-                activeBtn.classList.add("bg-brand-gold", "text-gray-950", "font-extrabold", "shadow-md");
-            }
+
             renderMenu();
         }
 
         function resetFilters() {
-            currentDietFilter = "ALL";
             setDietFilter("ALL");
             clearSearch();
         }
